@@ -38,7 +38,7 @@ npm install
 ### 3. 개발 서버 실행
 
 ```bash
-npm run dev
+npm start
 ```
 
 ### 4. 브라우저에 접속
