@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Try On Together</title>
+    <style>
+        body { font-family: sans-serif; margin: 0; padding: 20px; background-color: #f4f4f9; }
+        .main-container { display: flex; justify-content: space-between; height: 70vh; gap: 20px; }
+        .avatar-panel { flex: 1; text-align: center; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.05); }
+        .avatar-panel img { width: 100%; max-width: 300px; height: auto; border: 1px solid #ddd; }
+        .avatar-panel .product-info { margin-top: 15px; font-size: 14px; color: #555; }
+
+        .chat-panel { flex: 1.5; display: flex; flex-direction: column; background: white; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.05); }
+        #chat-container { flex-grow: 1; padding: 15px; overflow-y: auto; border-bottom: 1px solid #eee; }
+        .chat-input-area { display: flex; padding: 10px; }
+        #message-input { flex-grow: 1; border: 1px solid #ccc; border-radius: 4px; padding: 10px; }
+        .chat-input-area button { border: none; background-color: #007bff; color: white; padding: 10px 15px; margin-left: 10px; border-radius: 4px; cursor: pointer; }
+        
+        /* Chat bubble styles */
+        .message { padding: 8px 12px; border-radius: 18px; margin-bottom: 10px; max-width: 70%; word-wrap: break-word; }
+        .me { background-color: #007bff; color: white; align-self: flex-end; margin-left: auto; }
+        .other { background-color: #e9e9eb; color: #333; align-self: flex-start; margin-right: auto; }
+        .system { font-size: 0.8em; text-align: center; color: #888; margin-bottom: 10px; width: 100%; }
+
+
+        .product-selection { margin-top: 20px; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.05); }
+        .product-list { display: flex; gap: 15px; overflow-x: auto; padding-bottom: 10px; }
+        .product-item { cursor: pointer; border: 1px solid #ddd; padding: 5px; border-radius: 4px; text-align: center; }
+        .product-item:hover { border-color: #007bff; }
+        .product-item img { width: 100px; height: 100px; object-fit: cover; }
+        .product-item p { margin: 5px 0 0 0; font-size: 12px; }
+    </style>
+</head>
+<body>
+
+    <div class="main-container">
+        <div id="left-panel" class="avatar-panel">
+            <h3>Player 1</h3>
+            <img id="left-avatar-img" src="https://via.placeholder.com/300x500.png?text=Waiting..." alt="Left Avatar">
+            <div id="left-product-info" class="product-info">착용한 상의: 없음</div>
+        </div>
+
+        <div class="chat-panel">
+            <div id="chat-container"></div>
+            <div class="chat-input-area">
+                <input type="text" id="message-input" placeholder="메시지를 입력하세요...">
+                <button onclick="send()">전송</button>
+            </div>
+        </div>
+
+        <div id="right-panel" class="avatar-panel">
+            <h3>Player 2</h3>
+            <img id="right-avatar-img" src="https://via.placeholder.com/300x500.png?text=Waiting..." alt="Right Avatar">
+            <div id="right-product-info" class="product-info">착용한 상의: 없음</div>
+        </div>
+    </div>
+
+    <div class="product-selection">
+        <h4>상의</h4>
+        <div id="top-products" class="product-list">
+            </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/index.js"></script>
+</body>
+</html>

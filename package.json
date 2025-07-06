@@ -1,16 +1,24 @@
 {
-  "name": "tryiton-node",
-  "version": "0.0.0",
-  "private": true,
+  "name": "node_chat",
+  "version": "1.0.0",
+  "description": "Node.js 실시간 채팅",
+  "main": "index.js",
   "scripts": {
-    "start": "node ./bin/www"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leegeunhyeok/node-chat.git"
+  },
+  "author": "Leegeunhyeok",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/leegeunhyeok/node-chat/issues"
+  },
+  "homepage": "https://github.com/leegeunhyeok/node-chat#readme",
   "dependencies": {
-    "cookie-parser": "~1.4.4",
-    "debug": "~2.6.9",
-    "ejs": "^3.1.10",
-    "express": "^5.1.0",
-    "http-errors": "~1.6.3",
-    "morgan": "~1.9.1"
+    "axios": "^1.10.0",
+    "express": "^4.16.3",
+    "socket.io": "^2.1.1"
   }
 }
