@@ -4,6 +4,8 @@
   "description": "Node.js 실시간 채팅",
   "main": "index.js",
   "scripts": {
+    "start": "node app.js",
+    "dev": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,7 +20,9 @@
   "homepage": "https://github.com/leegeunhyeok/node-chat#readme",
   "dependencies": {
     "axios": "^1.10.0",
+    "cors": "^2.8.5",
+    "dotenv": "^17.0.1",
     "express": "^4.16.3",
-    "socket.io": "^2.1.1"
+    "socket.io": "^4.8.1"
   }
 }
